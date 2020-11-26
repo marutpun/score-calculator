@@ -9,14 +9,25 @@ function TScoreSummary() {
 	const stdValue = useRecoilValue(atoms.getStdValue);
 
 	const _calculateZTScore = () => {
-		const newVal = tempC.map((item) => {
-			return {
-				...item,
-				zScore: parseFloat(((item.rawScore - mean) / stdValue).toFixed(6)),
-				tScore: parseFloat((50 + ((item.rawScore - mean) / stdValue) * 10).toFixed(6)),
-			};
-		});
-		setTempC(newVal);
+		if (stdValue > 0) {
+			const newVal = tempC.map((item) => {
+				return {
+					...item,
+					zScore: parseFloat(((item.rawScore - mean) / stdValue).toFixed(6)),
+					tScore: parseFloat((50 + ((item.rawScore - mean) / stdValue) * 10).toFixed(6)),
+				};
+			});
+			setTempC(newVal);
+		} else {
+			const newVal = tempC.map((item) => {
+				return {
+					...item,
+					zScore: 'N/A',
+					tScore: 'N/A',
+				};
+			});
+			setTempC(newVal);
+		}
 	};
 
 	return (
