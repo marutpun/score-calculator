@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 
 import GpaContainer from './containers/GpaContainer';
@@ -8,15 +8,6 @@ function App() {
 	return (
 		<RecoilRoot>
 			<Router>
-				<ul>
-					<li>
-						<Link to="/">GPAx Calculator</Link>
-					</li>
-					<li>
-						<Link to="/TScoreContainer">T Score Calculator</Link>
-					</li>
-				</ul>
-
 				<Switch>
 					<Route exact path="/">
 						<GpaContainer />
