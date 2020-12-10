@@ -17,7 +17,6 @@ function TScoreForm() {
 							name="firstName"
 							id="form__subject"
 							placeholder="Name / ชื่อ - นามสกุล"
-							required
 							onChange={_handleChangeInput}
 							value={name}
 						/>
