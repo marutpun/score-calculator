@@ -17,7 +17,6 @@ function GradeForm() {
 							name="subject"
 							id="form__subject"
 							placeholder="Subject / วิชา"
-							required
 							value={subject}
 							onChange={_handleChangeInput}
 						/>
